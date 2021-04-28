@@ -2,7 +2,7 @@
 
 ## Aplicacion de Tareas con Firebase
 
-#Deploy
+# Deploy
 ### link: https://keen-bardeen-73ef3a.netlify.app/
 
 # Imagen del proyecto
