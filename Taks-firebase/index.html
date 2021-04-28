@@ -17,20 +17,23 @@
 <body>
 
     <nav>
-        <div class="nav-wrapper">
-          <a href="#" class="brand-logo right">Lista de Tareas</a>
+        <div class="blue nav-wrapper">
+          <a href="#" class="brand-logo right center">Lista de Tareas</a>
           <span id='estilos' class="material-icons">content_paste</span>
+          <span id='estilos' class="
+          ">Enrique S. García</span>
+
         </div>
     </nav>
 
     <div class="container">
-        <form action="add-tarea-form">
-                <input type="text" name="titulo" placeholder="Agregar Tarea" />
-                <a class="waves-effect waves-light btn"><i class="material-icons right">add</i>Agregar</a>
+        <form id="add-tarea-form">
+                <input type="text" name="titulo" placeholder="Agregar Tarea" required minlength="4" />
+                <button class="waves-effect waves-light btn"><i class="material-icons right">add</i>Agregar Tarea</button>
         </form>
 
-        <ul class="collection">
-            <li class="collection-item">
+        <ul class="collection" id="lista-tareas">
+            <!--<li class="collection-item">
                 <div>
                     <span>Tarea 1</span>
                     <i class="material-icons secondary-content">delete_forever</i>
@@ -38,7 +41,7 @@
                         <i class="material-icons">edit</i>
                     </a>
                 </div>
-            </li>
+            </li> -->
         </ul>
 
 
@@ -46,11 +49,14 @@
             <div id="modal1" class="modal">
                 <div class="modal-content">
                     <h4>Actualizar</h4>
-                    <p>Contenido a actualizar</p>
+                    <input type="text" name="newTitle" placeholder="Actualizar Tarea" required>
+                    
                 </div>
+
                 <div class="modal-footer">
-                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Actualizar</a>
+                    <a href="#!" id="updateBtn" class="modal-close waves-effect waves-green btn-flat">Actualizar</a>
                 </div>
+
             </div>
 
     </div>
@@ -61,6 +67,39 @@
             var instances = M.Modal.init(elems);
         });
     </script>
+
+
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-firestore.js"></script>
+
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+
+        <script>
+            // Your web app's Firebase configuration
+            const firebaseConfig = {
+                apiKey: "AIzaSyALclyMGfsSOzmFVKo5a6cZMAO4qjpBfUo",
+                authDomain: "listatareas-78f40.firebaseapp.com",
+                projectId: "listatareas-78f40",
+                storageBucket: "listatareas-78f40.appspot.com",
+                messagingSenderId: "673901597806",
+                appId: "1:673901597806:web:235dc0d6daeb95b2b6027f"
+            };
+
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+
+            const db = firebase.firestore();
+        </script>
+
+        <script src="app.js">
+
+        </script>
+
+       
 
     
 </body>
